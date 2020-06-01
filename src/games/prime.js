@@ -7,13 +7,16 @@ const isPrime = (number) => {
       return false;
     }
   }
+
   return true;
 };
 
 const resultRound = () => {
   const randomNumber = getRandomNumber();
+
   const questionText = randomNumber;
   const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
+
   return { questionText, correctAnswer };
 };
 

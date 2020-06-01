@@ -18,8 +18,10 @@ const resultRound = () => {
   const number1 = getRandomNumber();
   const number2 = getRandomNumber();
   const operation = getRandomMatematicOperation();
+
   const questionText = `${number1} ${operation} ${number2}`;
   const correctAnswer = String(calculate(number1, number2, operation));
+
   return { questionText, correctAnswer };
 };
 

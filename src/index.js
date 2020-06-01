@@ -12,6 +12,7 @@ const playGame = (userName, resultRound, conditionOfGame) => {
     if (userAnswer !== correctAnswer) {
       console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}"`);
       console.log(`Let's try again, ${userName}!`);
+
       return;
     }
 
@@ -20,16 +21,17 @@ const playGame = (userName, resultRound, conditionOfGame) => {
   console.log(`Congratulations, ${userName}`);
 };
 
-const welcomeAndGetUserName = () => {
+const setUserData = () => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
+
   return userName;
 };
 
 export default (resultRound, conditionOfGame) => {
-  const userName = welcomeAndGetUserName();
+  const userName = setUserData();
   playGame(userName, resultRound, conditionOfGame);
 };
 
-export { welcomeAndGetUserName };
+export { setUserData };

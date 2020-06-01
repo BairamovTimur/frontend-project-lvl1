@@ -1,13 +1,14 @@
-const getRandomNumber = (min = 1, max = 11) => {
-  const minRound = Math.ceil(min);
-  const maxRound = Math.floor(max);
-  return Math.floor(Math.random() * (maxRound - minRound)) + minRound;
+const getRandomNumber = (min = 1, max = 10) => {
+  const rand = min + Math.random() * (max + 1 - min);
+
+  return Math.floor(rand);
 };
 
 const getRandomMatematicOperation = () => {
   const operations = ['+', '-', '*'];
-  const index = getRandomNumber(0, operations.length);
-  return operations[index];
+  const idx = getRandomNumber(0, operations.length - 1);
+
+  return operations[idx];
 };
 
 export default getRandomNumber;

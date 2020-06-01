@@ -5,8 +5,10 @@ const isEven = (number) => number % 2 === 0;
 
 const resultRound = () => {
   const randomNumber = getRandomNumber();
+
   const questionText = randomNumber;
   const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
+
   return { questionText, correctAnswer };
 };
 
