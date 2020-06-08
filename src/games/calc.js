@@ -1,5 +1,12 @@
-import getRandomNumber, { getRandomMatematicOperation } from '../rand.js';
+import getRandomNumber from '../rand.js';
 import gameEngine from '../index.js';
+
+const getRandomMatematicOperation = () => {
+  const operations = ['+', '-', '*'];
+  const idx = getRandomNumber(0, operations.length - 1);
+
+  return operations[idx];
+};
 
 const calculate = (number1, number2, operation) => {
   switch (operation) {
@@ -14,7 +21,7 @@ const calculate = (number1, number2, operation) => {
   }
 };
 
-const resultRound = () => {
+const generateRound = () => {
   const number1 = getRandomNumber();
   const number2 = getRandomNumber();
   const operation = getRandomMatematicOperation();
@@ -27,5 +34,5 @@ const resultRound = () => {
 
 export default () => {
   const conditionOfGame = 'What is the result of the expression?';
-  gameEngine(resultRound, conditionOfGame);
+  gameEngine(generateRound, conditionOfGame);
 };
